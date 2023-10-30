@@ -1,0 +1,23 @@
+{
+  "name": "smol-ninja/fuzzing",
+  "author": {
+    "name": "smol-ninja",
+    "url": "https://github.com/smol-ninja"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.18.3",
+    "prettier": "^3.0.0"
+  },
+  "private": true,
+  "scripts": {
+    "build": "npx hardhat compile",
+    "lint": "pnpm lint:sol && pnpm prettier:check",
+    "lint:sol": "pnpm solhint {script,src,test}/**/*.sol",
+    "prettier:check": "prettier --check **/*.{json,md} --ignore-path=.prettierignore",
+    "prettier:write": "prettier --write **/*.{json,md} --ignore-path=.prettierignore"
+  },
+  "dependencies": {
+    "solhint": "^3.6.2"
+  }
+}
