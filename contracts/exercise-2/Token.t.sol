@@ -18,6 +18,12 @@ contract TestToken is Token {
 
     function echidna_test_balance() public view returns (bool) {
         // add the property
+        /**
+         * Call sequence:
+         * 1.Owner()
+         * 2.resume()
+         * Comment: anybody can become the owner and then resume the contract
+         */
         return paused() == true;
     }
 }

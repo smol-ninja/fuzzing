@@ -19,6 +19,11 @@ contract TestMintable is MintableToken {
 
     function echidna_test_balance() public view returns (bool) {
         // add the property
+        /**
+         * Call sequence:
+         * 1.mint(115792089237316195423570985008687907853269984665640564039457584007913129629935)
+         * comment: overflow vulnerability in mint()
+         */
         return balances[echidna] <= 10000;
     }
 }

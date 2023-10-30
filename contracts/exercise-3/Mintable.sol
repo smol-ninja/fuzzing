@@ -12,7 +12,7 @@ contract MintableToken is Token {
     }
 
     function mint(uint256 value) public onlyOwner {
-        // check value is less than 2**255 - 1
+        // casting uint256 to int256 can lead to arithmetic errors. check that value is less than type(int256).max
         require(value <= uint256(type(int256).max));
         require(int256(value) + totalMinted < totalMintable);
         totalMinted += int256(value);

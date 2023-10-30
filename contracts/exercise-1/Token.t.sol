@@ -17,6 +17,11 @@ contract TestToken is Token {
 
     function echidna_test_balance() public view returns (bool) {
         // add the property
+        /**
+         *  Call sequence:
+         *  1.transfer(0x2fffffffd,115765784617545820972138066965335662155749220024220347647371619785953704469996)
+         *  comment: sending a large value to `transfer()` can change the condition. Probably an overflow vulnerability.
+         */
         return balances[echidna] <= 10000;
     }
 }
