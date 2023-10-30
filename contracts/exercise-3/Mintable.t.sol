@@ -1,4 +1,4 @@
-// SPDX-License-Identifier:
+// SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
 import "./Mintable.sol";
@@ -13,7 +13,7 @@ contract TestMintable is MintableToken {
     int256 totalMintable_ = 10000;
 
     // update the constructor
-    constructor() public MintableToken(totalMintable_) {
+    constructor() MintableToken(totalMintable_) {
         owner = echidna;
     }
 
