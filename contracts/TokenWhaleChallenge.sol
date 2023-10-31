@@ -77,7 +77,7 @@ contract TestTokenWhale is TokenWhaleChallenge {
          * 
          * comment: sending large value to transfer leads to overflow/underflow
          */
-        return balanceOf[echidna] < 1000000;
+        return !isComplete();
     }
 }
 

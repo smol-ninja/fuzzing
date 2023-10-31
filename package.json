@@ -18,6 +18,7 @@
     "prettier:write": "prettier --write **/*.{json,md} --ignore-path=.prettierignore"
   },
   "dependencies": {
+    "@openzeppelin/contracts": "^4.0.0",
     "solhint": "^3.6.2"
   }
 }
