@@ -1,17 +1,24 @@
+#select the mode to test, which can be property, assertion, overflow, exploration, optimization
+testMode: "property"
+#psender is the sender for property transactions; by default intentionally
+#the same as contract deployer
+psender: "0x10000"
 #deployer is address of the contract deployer (who often is privileged owner, etc.)
-deployer: "0x41414141"
+deployer: "0x30000"
 #sender is set of addresses transactions may originate from
-sender: ["0x42424242", "0x43434343"]
-#maximum time between generated txs; default is one week
-maxTimeDelay: 15778800
+sender: ["0x10000", "0x20000", "0x30000"]
+#contractAddr is the address of the contract itself
+contractAddr: "0x1234"
+#prefix is the prefix for Boolean functions that are properties to be checked
+prefix: "echidna_"
 #testLimit is the number of test sequences to run
-testLimit: 1000000
+testLimit: 200000
 #seqLen defines how many transactions are in a test sequence
-seqLen: 200
+seqLen: 50
 #coverage controls coverage guided testing
 coverage: false
-#checkAsserts checks assertions
-checkAsserts: true
+# number of workers
+workers: 10
 #map dependencies
 cryticArgs:
   [

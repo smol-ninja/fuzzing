@@ -5,6 +5,7 @@ coverage.json
 typechain
 typechain-types
 penv
+crytic-export
 
 # Hardhat files
 cache

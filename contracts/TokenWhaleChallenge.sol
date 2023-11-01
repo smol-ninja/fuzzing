@@ -61,8 +61,11 @@ contract TokenWhaleChallenge {
     }
 }
 
+/**
+ * @notice Test contract for Invariant testing with echidna
+ */
 contract TestTokenWhale is TokenWhaleChallenge {
-    address echidna = tx.origin;
+    address echidna = msg.sender;
 
     constructor() public TokenWhaleChallenge(echidna) {}
 
@@ -81,11 +84,14 @@ contract TestTokenWhale is TokenWhaleChallenge {
     }
 }
 
+/**
+ * @notice Attacker contract to solve the challenge
+ */
 contract CaptureTheEther {
     address player;
     TokenWhaleChallenge tokenWhale;
 
-    constructor(address tokenAddress) {
+    constructor(address tokenAddress) public {
         player = msg.sender;
         tokenWhale = TokenWhaleChallenge(tokenAddress);
     }
